@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            js+css3圆形旋转动画特效
+        </title>
+        <link rel="stylesheet" type="text/css" href="css/demo2.css">
+    </head>
+    <body>
+        <div>
+            <div class="container">
+                <!--    圆心-->
+                <div class="circle">
+                    <span style="line-height: 84px;">圆心</span>
+                </div><!--    第一层-->
+                <div class="borther">
+                    <div id="lopp"></div>
+                    <div class="ball" onmouseenter="onMouseGo()" onmouseout="onMouseMove()">
+                        1
+                    </div>
+                    <div class="ball" onmouseenter="onMouseGo()" onmouseout="onMouseMove()">
+                        2
+                    </div>
+                    <div class="ball" onmouseenter="onMouseGo()" onmouseout="onMouseMove()">
+                        3
+                    </div>
+                    <div class="ball" onmouseenter="onMouseGo()" onmouseout="onMouseMove()">
+                        4
+                    </div>
+                    <div class="ball" onmouseenter="onMouseGo()" onmouseout="onMouseMove()">
+                        5
+                    </div>
+                </div><!--    第二层-->
+                <div class="borther2">
+                    <div id="lopp2"></div>
+                    <div class="ball ball2" onmouseenter="onMouseGo()" onmouseout="onMouseMove()">
+                        1
+                    </div>
+                    <div class="ball ball2" onmouseenter="onMouseGo()" onmouseout="onMouseMove()">
+                        2
+                    </div>
+                    <div class="ball ball2" onmouseenter="onMouseGo()" onmouseout="onMouseMove()">
+                        3
+                    </div>
+                    <div class="ball ball2" onmouseenter="onMouseGo()" onmouseout="onMouseMove()">
+                        4
+                    </div>
+                    <div class="ball ball2" onmouseenter="onMouseGo()" onmouseout="onMouseMove()">
+                        5
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        var items = document.querySelectorAll('.ball');
+        // items[0].style['animation-delay'] = '-5s,0s,0s';
+        // items[0].querySelector('.item__circle').style['transform'] = 'scale(1.5)';
+        //
+        for (var i = 0; i < items.length; i++) {
+                (function (i) {
+                        items[i].style['animation-delay'] = (-5) - 4 * i + 's,' + (-4 * i) + 's,' + (-4 * i) + 's'
+                })(i);
+        }
+        function onMouseGo() {
+                // document.querySelectorAll('.ball').classList.add('active')
+                for (var i = 0; i < items.length; i++) {
+                        (function (i) {
+                                items[i].classList.add('active')
+                        })(i);
+                }
+        }
+        function onMouseMove() {
+                // document.getElementsByClassName('ball').classList.remove('active')
+                for (var i = 0; i < items.length; i++) {
+                        (function (i) {
+                                items[i].classList.remove('active')
+                        })(i);
+                }
+        }
+        </script>
+    </body>
+</html>
